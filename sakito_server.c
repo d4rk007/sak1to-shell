@@ -262,7 +262,7 @@ void client_interact(Server_map* const s_map)
 
 		// Parse stdin string to return c2 command function pointer.
 		size_t cmd_len = 0;
-		const server_func target_func = (const server_func)s_parse_cmd(s_map->buf+8,
+		const server_func target_func = s_parse_cmd(s_map->buf+8,
 									&cmd_len,
 									commands,
 									func_array,
@@ -305,7 +305,7 @@ void sakito_console(Server_map* const s_map)
 
 		// Parse stdin string to return console command function pointer.
 		size_t cmd_len = 0;
-		const console_func target_func = (const console_func)s_parse_cmd(s_map->buf,
+		const console_func target_func = s_parse_cmd(s_map->buf,
 									 &cmd_len,
 									 commands,
 									 func_array,
